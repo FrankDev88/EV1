@@ -1,3 +1,5 @@
+
+import datetime as dt
 NOTAS = {
   0:{
     "FECHA": dt.date(2023, 6, 24),
@@ -72,8 +74,8 @@ try:
                         break
                 NOTAS.setdefault(Folio, {})
                 NOTAS.get(Folio, 0).setdefault("FECHA", FECHA)
-                NOTAS.get(Folio, 0).setdefault("NOMBRE", NOMBRE)
-                NOTAS.get(Folio, 0).setdefault("MONTO_TOTAL", MONTO_TOTAL)
+                NOTAS.get(Folio, 0).setdefault("CLIENTE", NOMBRE)
+                NOTAS.get(Folio, 0).setdefault("MONTO", MONTO_TOTAL)
                 NOTAS.get(Folio, 0).setdefault("DETALLES", DETALLES)
 
             except ValueError as vr:
@@ -92,7 +94,7 @@ try:
         if OpcionMenu == 2:
             try:
                 while True:
-                    MenuNotas = int(input("QUÉ QUIERE HACER: "))
+                    MenuNotas = int(input("QUÉ QUIERE HACER 1\CONSULTA POR FECHA 2\CONSULTA POR FOLIO 3\SALIR: "))
                     # VER REPORTES POR INTERVALO DE FECHAS
                     if MenuNotas == 1:
                         try:
